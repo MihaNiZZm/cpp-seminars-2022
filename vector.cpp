@@ -1,4 +1,7 @@
+#include <iostream>
+
 class vector {
+public:
   int *data;
   int size;
   int capacity;
@@ -36,6 +39,10 @@ class vector {
     this->data = newData;
   }
 
+  void printArray() {
+
+  }
+
   // void set(int num, int idx);
   // int at(int idx);
 };
@@ -50,6 +57,10 @@ int main(int argc, char **argv) {
   newVector->pushBack(1);
   newVector->pushBack(42);
   newVector->pushBack(904);
+  newVector->pushBack(-435734);
+  for (int i = 0; i < newVector->size; ++i) {
+    std::cout << newVector->data[i] << std::endl;
+  }
   delete newVector;
   return 0;
 }
