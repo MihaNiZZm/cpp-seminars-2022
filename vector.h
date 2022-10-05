@@ -18,6 +18,8 @@ public:
 
   void printVector();
 
+  void printArray(int* begin, int* end);
+
 private:
   int *data_;
   int size_;

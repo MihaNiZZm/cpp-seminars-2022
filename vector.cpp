@@ -63,3 +63,11 @@ void vector::resize(int newCapacity) {
   delete[] data_;
   data_ = newData;
 }
+
+void vector::printArray(int* begin, int* end) {
+  int* current = begin;
+  while (current != end) {
+    std::cout << *current << std::endl;
+    ++current;
+  }
+}
