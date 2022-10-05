@@ -1,6 +1,7 @@
 #include "vector.h"
 
 #include <algorithm>
+#include <cassert>
 #include <cstddef>
 #include <iostream>
 
@@ -25,7 +26,8 @@ vector& vector::operator=(vector other) {
 }
 
 int& vector::operator[](int idx) {
-    return data_[idx];
+  assert(idx >= 0 && idx < size_);
+  return data_[idx];
 }
 
 // adds element to the last avaialable position,
