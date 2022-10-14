@@ -71,3 +71,36 @@ void vector::printArray(int* begin, int* end) {
     ++current;
   }
 }
+
+int& vector::iterator::operator*() {
+  return v_[idx_];
+}
+
+//++it
+vector::iterator& vector::iterator::operator++() {
+  ++idx_;
+  return *this;
+}
+
+//it++
+vector::iterator vector::iterator::operator++(int) {
+  iterator tmp(*this);
+  ++idx_;
+  return tmp;
+}
+
+bool vector::iterator::operator!=(const iterator& other) const {
+  return !(*this == other);
+}
+
+bool vector::iterator::operator==(const iterator& other) const {
+  return (&v_ == &other.v_ && idx_ == other.idx_);
+}
+
+vector::iterator vector::begin() {
+  return vector::iterator(0, *this);
+}
+
+vector::iterator vector::end() {
+  return vector::iterator(size_, *this);
+}
